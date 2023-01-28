@@ -1,8 +1,6 @@
 // Octokit.js
 // https://github.com/octokit/core.js#readme
 
-var 
-window.alert(userauth);
 
 import {
   Octokit,
