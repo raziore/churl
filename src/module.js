@@ -2,6 +2,7 @@
 // https://github.com/octokit/core.js#readme
 
 var userauth = prompt("请输入Github令牌","ghp_……");
+window.alert(userauth);
 
 import {
   Octokit,
