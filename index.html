@@ -170,31 +170,7 @@
 		document.getElementById('menu')?.classList.add('hidden');
 	};
 </script>
-<script type="module">
-// Octokit.js
-// https://github.com/octokit/core.js#readme
-
-import {
-  Octokit,
-  App
-} from "https://cdn.skypack.dev/octokit";
-
-
-const octokit = new Octokit({
-  auth: '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'
-});
-
-await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
-  owner: 'raziore',
-  repo: 'churl',
-  path: 'demo/message.txt',
-  message: 'start a new conversation',
-  committer: {
-    name: 'MYNAME',
-    email: 'email@exameple.com'
-  },
-  content: 'Y29udGVudA=='
-});
+<script type="module" src="src/module.js">
 </script>
 </body>
 
