@@ -1,7 +1,7 @@
 // Octokit.js
 // https://github.com/octokit/core.js#readme
 
-var userauth = prompt("请输入Github令牌","ghp_……");
+var 
 window.alert(userauth);
 
 import {
@@ -10,7 +10,7 @@ import {
 } from "https://cdn.skypack.dev/octokit";
 
 const octokit = new Octokit({
-  auth = ${userauth}
+  auth = prompt("请输入Github令牌","ghp_……");
 });
 
 await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
