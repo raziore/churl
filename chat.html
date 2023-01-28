@@ -159,7 +159,7 @@ import {
 } from "https://cdn.skypack.dev/octokit";
 
 const octokit = new Octokit({
-  auth = prompt("请输入Github令牌","ghp_……");
+  auth = prompt("请输入Github令牌","ghp_……")
 });
 
 await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
