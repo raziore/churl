@@ -10,7 +10,7 @@ import {
 } from "https://cdn.skypack.dev/octokit";
 
 const octokit = new Octokit({
-  auth = userauth
+  auth = ${userauth}
 });
 
 await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
