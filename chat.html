@@ -160,17 +160,23 @@ import {
 
 const userauth = prompt("请输入Github令牌","ghp_");
 const userowner = prompt("请输入Github账号名称","owner");
-const userpath = prompt("请输入创建聊天室文件路径","path");
 const username = prompt("请输入昵称","name");
 
 const octokit = new Octokit({
   auth: userauth
 });
 
+await octokit.request('POST /user/repos', {
+  name: 'churlbeta',
+  description: 'churl beta.',
+  'private': false,
+  is_template: false
+})
+
 await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
   owner: userowner,
-  repo: 'churl',
-  path: userpath,
+  repo: 'churlbeta',
+  path: 'message.txt',
   message: 'start a new conversation',
   committer: {
     name: username,
