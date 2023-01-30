@@ -175,12 +175,12 @@ await octokit.request('POST /user/repos', {
 
 await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
   owner: userowner,
-  repo: 'churlbeta',
+  repo: 'churlmessage',
   path: 'message.txt',
   message: 'start a new conversation',
   committer: {
     name: username,
-    email: 'email@ezx.com'
+    email: 'email@email.com'
   },
   content: 'Y29udGVudA=='
 });
