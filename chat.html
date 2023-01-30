@@ -185,12 +185,11 @@ await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
   content: 'Y29udGVudA=='
 });
 
-const message = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}{?ref}', {
+await octokit.request('GET /repos/{owner}/{repo}/contents/{path}{?ref}', {
   owner: userowner,
   repo: 'churlmessage',
   path: 'message.txt'
 });
-console.log(message);
 </script>
 
 </body>
