@@ -4,7 +4,7 @@
 
 大致思路：使用Octokit.js，通过Personal Access Token与Github API（REST API及GraphQL API）进行交互，将聊天记录存储到Github私人仓库，再从客户端轮询以获取最新数据。
 
-## 目前存在的问题：
+#### 目前存在的问题：
 
 1.由于托管平台将静态资源单独存放在一个域名下，致使引用JS模型（或其中的库）会出现跨域限制，所以暂将JS放在body末尾。可能导致HTML文件过于臃肿。
 
