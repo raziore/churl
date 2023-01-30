@@ -166,7 +166,8 @@ const octokit = new Octokit({
   auth: userauth
 });
 
-await octokit.request('POST /user/repos', {
+try {
+  await octokit.request('POST /user/repos', {
   name: 'churlmessage',
   description: 'Your churl message repo.',
   'private': true,
@@ -184,6 +185,7 @@ await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
   },
   content: 'Y29udGVudA=='
 });
+}
 </script>
 
 </body>
