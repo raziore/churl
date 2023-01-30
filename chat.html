@@ -165,6 +165,14 @@ const username = prompt("请输入昵称","name");
 const octokit = new Octokit({
   auth: userauth
 });
+	
+const result = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}{?ref}', {
+  owner: userowner,
+  repo: 'churlmessage',
+  path: 'message.txt'
+});
+const content = result.data.map(contents => {title: contents.content});
+console.log(content);
 
 await octokit.request('POST /user/repos', {
   name: 'churlmessage',
@@ -185,13 +193,7 @@ await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
   content: 'Y29udGVudA=='
 });
 
-const result = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}{?ref}', {
-  owner: userowner,
-  repo: 'churlmessage',
-  path: 'message.txt'
-});
-const content = result.data.map(contents => {title: contents.content})
-console.log(content)
+
 </script>
 
 </body>
