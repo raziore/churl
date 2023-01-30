@@ -185,11 +185,13 @@ await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
   content: 'Y29udGVudA=='
 });
 
-await octokit.request('GET /repos/{owner}/{repo}/contents/{path}{?ref}', {
+const result = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}{?ref}', {
   owner: userowner,
   repo: 'churlmessage',
   path: 'message.txt'
 });
+const content = result.data.map(contents => {title: contents.content})
+console.log(content)
 </script>
 
 </body>
