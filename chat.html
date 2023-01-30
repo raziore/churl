@@ -167,9 +167,9 @@ const octokit = new Octokit({
 });
 
 await octokit.request('POST /user/repos', {
-  name: 'churlbeta',
-  description: 'churl beta.',
-  'private': false,
+  name: 'churlmessage',
+  description: 'Your churl message repo.',
+  'private': true,
   is_template: false
 })
 
