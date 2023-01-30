@@ -148,8 +148,8 @@
 		document.getElementById('menu')?.classList.add('hidden');
 	};
 </script>
-<script type="module">
-// Octokit.js
+    <script type="module">
+        // Octokit.js
 // https://github.com/octokit/core.js#readme
 
 
@@ -165,33 +165,20 @@ const username = prompt("请输入昵称","name");
 const octokit = new Octokit({
   auth: userauth
 });
-	
-const result = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}{?ref}', {
-  owner: userowner,
-  repo: 'churlmessage',
-  path: 'message.txt'
-});
-const content = result.data.contents;
-console.log(content);
 
 await octokit.request('POST /user/repos', {
   name: 'churlmessage',
-  description: 'Your churl message repo.',
+  description: 'Your private churl message repo.',
   'private': true,
   is_template: false
 })
 
-await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
+await octokit.request('POST /repos/{owner}/{repo}/issues', {
   owner: userowner,
   repo: 'churlmessage',
-  path: 'message.txt',
-  message: 'start a new conversation',
-  committer: {
-    name: username,
-    email: 'email@email.com'
-  },
-  content: 'Y29udGVudA=='
-});
+  title: 'TITLE',
+  body: 'BODY',
+})
 
 
 </script>
