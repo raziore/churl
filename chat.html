@@ -166,7 +166,7 @@ const octokit = new Octokit({
   auth: userauth
 });
 
-const churlissues = await octokit.request('GET /repos/{owner}/{repo}/issues{?milestone,state,assignee,creator,mentioned,labels,sort,direction,since,per_page,page}', {
+const churlissues = await octokit.request('GET /repos/{owner}/{repo}/issues{?assignee,creator,sort,direction,since,per_page,page}', {
   owner: userowner,
   repo: 'churlmessage'
 });
