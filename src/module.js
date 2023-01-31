@@ -1,24 +1,28 @@
-// Octokit.js
-// https://github.com/octokit/core.js#readme
-
-
-import {
-  Octokit,
-  App
-} from "https://cdn.skypack.dev/octokit";
+import {Octokit,App} from 'https://churl.netlify.app/';
+const userauth = prompt("请输入Github令牌","ghp_");
+const userowner = prompt("请输入Github账号名称","owner");
+const username = prompt("请输入昵称","name");
 
 const octokit = new Octokit({
-  auth = prompt("请输入Github令牌","ghp_……");
+  auth: userauth
 });
 
-await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
-  owner: 'raziore',
-  repo: 'churl',
-  path: 'demo/message.txt',
-  message: 'start a new conversation',
-  committer: {
-    name: 'MYNAME',
-    email: 'email@exameple.com'
-  },
-  content: 'Y29udGVudA=='
+const churlissues = await octokit.request('GET /repos/{owner}/{repo}/issues{?assignee,creator,sort,direction,since,per_page,page}', {
+  owner: userowner,
+  repo: 'churlmessage'
 });
+console.log(churlissues);
+
+/*await octokit.request('POST /user/repos', {
+  name: 'churlmessage',
+  description: 'Your private churl message repo.',
+  'private': true,
+  is_template: false
+})
+
+await octokit.request('POST /repos/{owner}/{repo}/issues', {
+  owner: userowner,
+  repo: 'churlmessage',
+  title: 'TITLE',
+  body: 'BODY'
+})*/
