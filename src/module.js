@@ -1,4 +1,4 @@
-import {Octokit,App} from 'https://churl.netlify.app/';
+import {Octokit,App} from 'https://churl.netlify.app/chat.html';
 const userauth = prompt("请输入Github令牌","ghp_");
 const userowner = prompt("请输入Github账号名称","owner");
 const username = prompt("请输入昵称","name");
