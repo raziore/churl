@@ -166,7 +166,13 @@ const octokit = new Octokit({
   auth: userauth
 });
 
-await octokit.request('POST /user/repos', {
+const churlissues = await octokit.request('GET /repos/{owner}/{repo}/issues{?milestone,state,assignee,creator,mentioned,labels,sort,direction,since,per_page,page}', {
+  owner: userowner,
+  repo: 'churlmessage'
+});
+console.log(churlissues);
+
+/*await octokit.request('POST /user/repos', {
   name: 'churlmessage',
   description: 'Your private churl message repo.',
   'private': true,
@@ -177,8 +183,8 @@ await octokit.request('POST /repos/{owner}/{repo}/issues', {
   owner: userowner,
   repo: 'churlmessage',
   title: 'TITLE',
-  body: 'BODY',
-})
+  body: 'BODY'
+})*/
 
 
 </script>
